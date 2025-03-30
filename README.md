@@ -1,5 +1,9 @@
 # 📊 WhatsApp Chat Analysis Dashboard 🚀
 
+
+https://github.com/user-attachments/assets/d765242d-2c99-417a-a3e5-d3a057339934
+
+
 ## 🔥 Overview
 This project is a **WhatsApp Chat Analysis Dashboard** built using **Django** as the backend. It features a **secure login system**, **interactive data visualizations with Chart.js**, and **AJAX for dynamic data fetching** without page reloads.
 
