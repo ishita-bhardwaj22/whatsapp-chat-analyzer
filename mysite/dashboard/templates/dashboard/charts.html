@@ -1,0 +1,163 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if request.session.customer_id %}
+  
+<!-- Custom Page Heading -->
+    {% block page_heading %} Charts {% endblock %}
+
+
+<!-- Content Row -->
+<div class="row">
+
+    <div class="col-xl-8 col-lg-7">
+
+        <!-- Monthly Timeline Chart -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Monthly Timeline</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <canvas id="monthlyTimelineChart"></canvas>
+                </div>
+                <hr>                 
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>
+
+        <!-- Daily Timeline Chart -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"> Daily Timeline </h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="dailyTimelineChart"></canvas>
+                </div>
+                <hr>
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>
+
+        <!-- Busy Day Bar Chart -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Most Busy Day</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <canvas id="busydayBarChart"></canvas>
+                </div>
+                <hr>
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>        
+
+         <!-- Busy Month Bar Chart -->
+         <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Most Busy Month</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <canvas id="busyMonthBarChart"></canvas>
+                </div>
+                <hr>                 
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>
+
+         <!-- Weekly Stacked Bar Chart -->
+         <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Weekly Activity Map</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <canvas id="stackedBarChart"></canvas>
+                </div>
+                <hr>                 
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>
+        
+        <!-- Common Words Bar Chart -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold text-primary">Most Common Words</h6>
+                <!-- Bootstrap Styled Select Dropdown -->
+                <div class="form-group mb-0">
+                    <label for="wordCountFilter" class="mb-0 text-muted small">Show top:</label>
+                    <select id="wordCountFilter" class="form-control form-control-sm">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <canvas id="commonWordsChart"></canvas>
+                </div>
+                <hr>
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Donut Chart -->
+    <div class="col-xl-4 col-lg-5">
+
+        <!-- Radar Chart -->
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Top Emoji Analysis</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-pie pt-4">
+                    <canvas id="emojipiechart"></canvas>
+                </div>
+                <hr>
+                <code>Selected user is : {{ selected_user }}</code>
+            </div>
+        </div>
+
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-pie pt-4">
+                    <canvas id="myPieChart"></canvas>
+                </div>
+                <hr>
+                Styling for the donut chart can be found in the
+                <code>/js/demo/chart-pie-demo.js</code> file.
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+{% else %}
+        <div class="h1"> Please Login Again!! </div>
+{% endif %}
+
+
+     
+{% endblock%}
+
+ 

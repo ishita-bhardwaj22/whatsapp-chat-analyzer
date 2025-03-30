@@ -1,0 +1,16 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if request.session.customer_id %}
+        <!-- Custom Page Heading -->
+    {% block page_heading %} Tables {% endblock %}
+{% else %}
+        <div class="h1"> Please Login Again!! </div>
+{% endif %}
+
+
+{% endblock%}
+
+ 
