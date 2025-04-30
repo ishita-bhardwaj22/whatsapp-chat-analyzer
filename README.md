@@ -1,95 +1,72 @@
-# 📊 WhatsApp Chat Analysis Dashboard 🚀
+whatsapp-chat-analysis
 
+A streamlit app to analyze your whatsapp chats
 
-https://github.com/user-attachments/assets/d765242d-2c99-417a-a3e5-d3a057339934
+Team Members Vandana — 2401560070
+Ishita Bhardwaj — 2401560055 Pallavi Kumari — 2401560084
 
+Description A WhatsApp Chat Analyzer is a tool designed to process and analyze WhatsApp chat logs to extract meaningful insights. Using Python, it can parse exported .txt chat files, identify patterns, and generate statistics on user interactions. Key Features:
 
-## 🔥 Overview
-This project is a **WhatsApp Chat Analysis Dashboard** built using **Django** as the backend. It features a **secure login system**, **interactive data visualizations with Chart.js**, and **AJAX for dynamic data fetching** without page reloads.
+    Message Frequency Analysis: Tracks how often messages are sent and received.
+    Word Usage Statistics: Identifies the most frequently used words in a conversation.
+    Time-Based Trends: Visualizes peak chatting hours.
+    Sentiment Analysis: Detects emotional tone in messages using NLP.
+    Chat Participant Activity: Breaks down conversation contributions by user.
 
-## 🛠️ Features
-- 🔐 **User Authentication**: Secure login system for dashboard access.
-- 📊 **Interactive Charts**: Uses **Chart.js** for visualizing WhatsApp chat data.
-- ⚡ **AJAX Integration**: Fetches chat data dynamically without refreshing the page.
-- 📂 **Chat Data Processing**: Extracts insights like **total messages, media shared, most active users, and word frequencies**.
-- 📅 **Activity Analysis**: Daily, monthly, and weekly chat trends.
-- 😂 **Emoji Usage Insights**: Detects and visualizes emojis used in conversations.
+Technologies used
 
-## 🏢 Tech Stack
-- **Backend**: Django (Python) 🐍
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap 🎨
-- **Charts**: Chart.js 📊
-- **Database**: SQLite 👖
-- **AJAX**: Fetch chat data dynamically ⚡
+Programming Language: Python 3.9+ – Core programming language used for backend logic, data processing, and visualization.
 
-## 🚀 Installation & Setup
+🧰 Libraries and Frameworks: Streamlit – To create the interactive web application interface. pandas – For structured data manipulation and analysis. matplotlib – To generate static visualizations like bar and line charts. seaborn – For enhanced statistical data visualizations (e.g., heatmaps). wordcloud – For generating word cloud graphics of frequent words. emoji – For parsing and analyzing emoji usage. urlextract – For extracting URLs shared in messages. re (Regular Expressions) – For parsing chat formats and cleaning text.
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yourusername/whatsapp-chat-analysis.git
-cd whatsapp-chat-analysis
-```
+🛠️ Additional Tools: ChromeDriver + Selenium (optional for Android-based parsing) – For handling dynamic content (not active in the current version). Text editors & IDEs – VS Code, Jupyter Notebook, or any Python-supported IDE. Git/GitHub – For version control and collaboration (optional).
 
-### 2️⃣ Create a Virtual Environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-```
+steps to run project Prerequisites Make sure you have the following installed:
 
-### 3️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+Python 3.9+
 
-### 4️⃣ Apply Migrations & Run Server
-```bash
-python manage.py migrate
-python manage.py runserver
-```
-Access the dashboard at **http://127.0.0.1:8000/** 🚀
+pip (Python package manager)
 
-## 🔐 Login System
-- Default credentials:
-  - **Username**: `admin`
-  - **Password**: `yourpassword`
-- To create a new superuser:
-  ```bash
-  python manage.py createsuperuser
-  ```
+Virtual environment (optional but recommended)
 
-## 📰 API Endpoint for Chat Data
-The chat data is fetched dynamically via AJAX from:
+🧱 1. Set Up the Project Directory bash Copy Edit mkdir whatsapp-chat-analyzer cd whatsapp-chat-analyzer Place these files into the directory:
 
+app.py (main Streamlit app)
 
-## 📊 Dashboard Features
+helper.py (analytics functions)
 
-### ✅ Total Messages, Words, Media & Links Shared
-Displays **total chat statistics** in a structured format.
+preprocessor.py (chat data parser)
 
-### ✅ Charts & Visualizations
-- **Bar Chart**: User-wise message distribution 📊
-- **Line Charts**: Daily & monthly activity trends 📈
-- **Heatmap**: Weekly activity analysis 🔥
-- **Pie Chart**: Emoji distribution 😂
+stop_hinglish.txt (stop words list)
 
-### ✅ Most Active Users
-Identifies the top contributors in group chats.
+📦 2. Install Required Libraries Create a virtual environment (optional):
 
-### ✅ Most Common Words
-Finds the most frequently used words (excluding stopwords).
+bash Copy Edit python -m venv venv source venv/bin/activate # or venv\Scripts\activate on Windows Then install dependencies:
 
-## 🚀 Future Enhancements
-- 📌 Export chat analysis reports as **PDF**.
-- 📌 More **chart types** for deeper insights.
-- 📌 Sentiment analysis of messages using **NLP**.
+bash Copy Edit pip install streamlit pandas matplotlib seaborn wordcloud urlextract emoji 🚀 3. Run the Streamlit App In your terminal or command prompt, execute:
 
-## 💖 Contributing
-Feel free to **fork** the repo, **submit issues**, or **contribute**! PRs are always welcome! 🚀
+bash Copy Edit streamlit run app.py This will:
 
-## 🐟 License
-This project is licensed under the **MIT License**.
+Start the Streamlit server.
 
----
+Open your browser at http://localhost:8501.
 
-🔹 **Made with ❤️ using Django & JavaScript** 🔹
+📁 4. Upload WhatsApp Chat File Open WhatsApp → Chat → More → Export Chat → Without Media → Save .txt file.
 
+Upload the .txt file using the sidebar file uploader in the app.
+
+📊 5. Explore the Analysis The app will display:
+
+Message stats
+
+Activity timelines
+
+Busiest users
+
+WordClouds
+
+Most common words
+
+Emoji usage
+
+Weekly heatmaps
